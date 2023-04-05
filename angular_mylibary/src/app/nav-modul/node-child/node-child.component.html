@@ -1,0 +1,14 @@
+<div *ngIf="navModulService.nodeChild(categorys,category)?.length;else categoryName">
+    <li nz-submenu nzTitle={{category.nameCategory}}>
+        <ul class="submenu">
+            <app-node-child 
+                *ngFor="let item of navModulService.nodeChild(categorys,category)" 
+                [category]="item" 
+                [categorys]="categorys" >
+            </app-node-child>
+        </ul>
+    </li>
+</div>
+<ng-template #categoryName>
+    <li nz-menu-item>{{category.nameCategory}}</li>
+</ng-template>

@@ -1,0 +1,101 @@
+app-bookelement {
+    box-sizing: border-box;
+}
+
+.book{
+    background-color: white;
+    margin-left: 1rem;
+    width: 20rem;
+    cursor: pointer;
+}
+
+.book_header__offcial{
+    display: block;
+    position: absolute;
+    z-index: 2;
+    width: 7rem;
+}
+
+.book_header{
+    width: 20rem;
+    border-radius: 0.5rem;  
+}
+
+.book_header__img{
+    padding: 0 3.5rem;
+    width: 100%;
+    height: 20rem;
+}
+
+.book_info{
+    position: relative;
+    top:0px;
+    padding-left: 1rem;
+}
+
+.book_info h3{
+    font-size: 1.5rem;
+}
+
+.book_info .book_info__rating{
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.book_info__rating svg{
+    position: relative;
+    top: 2px;
+}
+
+.book_info__rating__totalSold{
+    padding-left: 1rem;
+}
+
+.book_info__rating__totalSold::after{
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: red;
+    top: 37px;
+    height: 1rem;
+    z-index: 2;
+    left: 35px;
+}
+
+.book_info__rating__totalSold__text{
+    font-weight: 300;
+}
+
+.book_price{
+    padding-left: 1rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.book_price .book_price__number{
+    color: red;
+}
+
+.book_price__number::after{
+    content: "đ";
+    text-decoration: underline;
+    position: relative;
+    top: -6px;
+    font-size: 1.2rem;
+    left: 0.5rem;
+}
+
+.book_price__number__sale_precent{
+    color: red;
+    padding-left: 1rem;
+    font-size: 1.3rem;
+    position: relative;
+    top: 4px;
+}
+
+.nzSpace{
+    position: relative;
+    display: inline;
+}

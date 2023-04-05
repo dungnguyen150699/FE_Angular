@@ -1,0 +1,8 @@
+{   
+    "home" : "Home",
+    "book" : "Book",
+    "login" : "Login",
+    "cart": "Cart",
+    "translate" : "Language",
+    "search" : "Search"
+}

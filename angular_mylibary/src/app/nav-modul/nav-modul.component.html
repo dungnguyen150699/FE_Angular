@@ -1,0 +1,66 @@
+<nz-layout>
+  <nz-header>
+    <ul nz-menu nzMode="horizontal" class="menu">
+      <div class="menu_logo">
+        <a [routerLink]="">
+          <img src="../../assets/img/logoptit.png" alt="my library" class="menu_logo__img">
+        </a>
+      </div>
+      <div class="menu_left" >
+        <li class="menu_left__item" nz-menu-item nzSelected>
+          <span nz-icon nzType="home"></span>
+          <a [routerLink]="'/'">
+            <span class="menu_left__item__text">{{'home' | translate}}</span>
+          </a>
+        </li>
+        <li class="menu_left__item" nz-menu-item>
+          <span nz-icon nzType="book"></span>
+          <a [routerLink]="'/book'">
+            <span class="menu_left__item__text">{{'book' | translate}}</span>
+          </a>
+        </li>
+        <!-- <li class="menu_left__item menu_left__item--search"> -->
+        <div class="menu_left__item__search">
+          <span  nz-icon nzType="search" nzTheme="outline" class="menu_left__item__search__icon"></span>
+          <input nz-input type="text" id="search" class="menu_left__item__search__input" />
+          <button nz-button nzType="default" class="menu_left__item__search__button">{{'search' | translate}}</button>
+        </div>
+        <!-- </li> -->
+      </div>
+      <div class="menu_right">
+        <div class="menu_right__translate">
+          <span class="menu_right__translate__text"><b>{{'translate' | translate}}</b></span>
+          <div class="menu_right__translate__itemImages">
+            <div (click)="selectLanguage('vi')" class="menu_right__translate__itemImage menu_right__translate__itemImage--vi"></div>
+            <div (click)="selectLanguage('en')" class="menu_right__translate__itemImage menu_right__translate__itemImage--en"></div>
+          </div>
+        </div>
+
+        <a [routerLink]="'/login'" class="menu_right__login">
+          <span nz-icon nzType="user" nzTheme="outline"></span>
+          <span class="menu_right__login__text">{{'login' | translate}}</span>
+        </a>
+        <a [routerLink]="'/cart'" class="menu_right__cart">
+          <span nz-icon nzType="shopping-cart" nzTheme="outline"></span>
+          <span class="menu_right__cart__text">{{'cart' | translate}}</span>
+        </a>
+      </div>
+    </ul>
+  </nz-header>
+  <nz-layout>
+    <nz-sider>
+      <div class="wrapper">
+        <nz-form-label>CATEGORY</nz-form-label>
+        <ul nz-menu nzMode="inline" nzTheme="light">
+          <li *ngFor="let item of navModulService.nodeRoot(categorys)">
+            <app-node-child [category]="item" [categorys]="categorys"></app-node-child>
+          </li>     
+        </ul>
+      </div>
+    </nz-sider>
+    <nz-content>
+        <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+  <nz-footer>Footer</nz-footer>
+</nz-layout>

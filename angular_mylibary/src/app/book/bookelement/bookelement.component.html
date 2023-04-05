@@ -1,0 +1,32 @@
+<div class="book" (click)="detailBook()">
+    <div class="book_header">
+        <img class="book_header__offcial"
+             src="https://salt.tikicdn.com/ts/upload/5d/4c/f7/0261315e75127c2ff73efd7a1f1ffdf2.png"
+        />
+        <nz-space class="nzSpace">
+            <img 
+            nz-image  
+            [nzSrc]="'https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg'" 
+            [nzPlaceholder]="'placeholder'" 
+            class="book_header__img"
+            />
+            <!-- <button *nzSpaceItem nz-button nzType="primary" (click)="onReload()">Reload</button> -->
+        </nz-space>  
+        <div class="book_info">
+            <h3 class="book_info__name">My book</h3>
+            <div class="book_info__rating">
+                <span _msttexthash="4823" _msthash="1131">5</span>
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" size="14" color="#fdd836" height="14" width="14" xmlns="http://www.w3.org/2000/svg" style="color: rgb(253, 216, 54);">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
+                </svg>
+                <div class="book_info__rating__totalSold">
+                    <span class="book_info__rating__totalSold__text">Sold 5000+</span>
+                </div>
+            </div>
+        </div>
+        <div class="book_price">
+            <h3 class="book_price__number">66.000</h3>
+            <span class="book_price__number__sale_precent">-30%</span>
+        </div>
+    </div>
+</div>

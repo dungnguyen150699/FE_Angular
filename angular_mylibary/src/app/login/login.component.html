@@ -1,0 +1,60 @@
+<nz-layout class="loginForm">
+  <nz-header class="loginForm-header">WELLCOM BACK</nz-header>
+  <nz-content class="loginForm-content">
+    <div nz-row>
+      <div nz-col nz-span="18">
+        <form nz-form class="loginForm-content__form" [formGroup]="loginForm" (ngSubmit)="onSubmit()"  >
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="email" class="loginForm-content__form-label loginForm-content__form-label--email">E-mail</nz-form-label>
+            <nz-form-control [nzSpan]="18">
+              <input nz-input 
+              name="email" 
+              type="email" 
+              id="email" 
+              class="loginForm-content__form-input"
+              formControlName="email"
+              >
+            </nz-form-control>
+          </nz-form-item >
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="password" class="loginForm-content__form-label loginForm-content__form-label--password">Password</nz-form-label>
+            <nz-form-control [nzSpan]="18">
+              <input nz-input 
+              name="password" 
+              type="password" 
+              id="password" 
+              class="loginForm-content__form-input"
+              formControlName="password"
+              >
+            </nz-form-control>
+          </nz-form-item >
+          <button nz-button nzType="primary" class="loginForm-content__submit">Submit</button>
+          <br/>
+          <div class="signUp">
+            <span class="signUp_textCommon">Havent Acount?</span>
+            &nbsp;
+            <a [routerLink]="'/signup'" class="signUp_href">SignUp</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="loginForm__split-social"> 
+      <span class="loginForm__split-social__border"></span>
+      <span class="loginForm__split-social__text">OR</span>
+    </div>
+    <div nz-row>
+      <div nz-col nz-span="18" class="formLogin__social">
+        <a href="http://localhost:8083/oauth2/authorize/facebook?redirect_uri=http://localhost:4200/oauth2/redirect" class="fb btn">
+            <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+        </a>
+        <a href="http://localhost:8083/oauth2/authorize/github?redirect_uri=http://localhost:4200/oauth2/redirect" class="github btn">
+            <i class="fa fa-github fa-fw"></i> Login with Github
+        </a>
+        <a href="http://localhost:8083/oauth2/authorize/google?redirect_uri=http://localhost:4200/oauth2/redirect" class="google btn">
+        <i class="fa fa-google fa-fw"></i> Login with Google+
+        </a>
+      </div>
+    </div>
+    
+  </nz-content>
+</nz-layout>

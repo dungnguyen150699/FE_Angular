@@ -1,0 +1,19 @@
+<div class="language-picker-area">
+  <div class="picker-label" >{{ 'choose_language' | translate }}</div>
+  <select (change)="selectLanguage($event)" class="language-picker">
+    <option value="en-US"> {{ 'language.english' | translate }} </option>
+    <option value="fr-FR"> {{ 'language.french' | translate }} </option>
+    <option value="de-DE"> {{ 'language.german' | translate }} </option>
+  </select>
+</div>
+<div class="content">
+  <h1>
+    {{ 'title' | translate }}
+  </h1>
+  <h3>
+    {{ 'welcome_text' | translate }}
+  </h3>
+  <button class="info">
+    {{ 'info' | translate }}
+  </button>
+</div>

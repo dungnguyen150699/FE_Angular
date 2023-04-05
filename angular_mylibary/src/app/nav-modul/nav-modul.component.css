@@ -1,0 +1,148 @@
+nz-header{
+    /* height: 64px; */
+    /* padding: 0 50px; */
+    height: auto !important;
+    color: rgba(0,0,0,.85);
+    line-height: 64px;
+    /* background: #001529; */
+}
+
+nz-sider{
+    background-color: transparent !important;
+    overflow-x: auto;
+    flex: none !important; 
+    max-width: auto !important;
+    min-width: auto !important; 
+    width: auto !important;
+}
+
+nz-content{
+    padding: 1rem;
+    background-color: #efefef !important;
+}
+
+.menu{
+    /* background-color: rgb(110, 110, 213); */
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    align-items: stretch;
+    padding: 1rem 1rem;
+}
+
+.menu_logo__img{
+    width: 10rem;
+    height: 5rem;
+    margin-left: 1rem;
+}
+
+.menu_left{
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    align-items: stretch;
+}
+
+.menu_right{
+    margin-left: 20%;
+    /* padding-top: 5%; */
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    align-items: stretch;
+    position: relative;
+    top: -8px;
+}
+
+.menu_right a{
+    padding: 0.5rem;
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+.menu_right a *{
+    margin-left: 0.5rem;
+}
+
+.menu_left__item__search{
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    width: 65rem;
+    border: 1px solid black;
+    height: 4rem;
+    align-items: center;
+    align-content: stretch;
+    border-radius: 0px;
+    position: relative;
+    top: 1rem;
+}
+
+.menu_left__item__search__icon{
+    padding-right: 1rem;
+    border: 0px solid transparent;
+    margin: 0px;
+    font-size: 2.5rem;
+    padding-left: 1rem;
+}
+
+.menu_left__item__search__input{
+    border: 0px solid transparent;
+    margin: 0px;
+    outline-width: 0;
+}
+
+.menu_left__item__search__input:focus{
+    box-shadow: none !important;
+}
+
+.menu_left__item__search__button{
+    border: 0px solid transparent;
+    margin: 0px;
+}
+
+.menu_left__item__search__button::after{
+    content: "";
+    position: absolute;
+    display: block;
+    border: 1px solid black;
+    top: 0px;
+    left: -7px;
+    width: 1px;
+    height: 100%;
+}
+
+.menu_right__translate{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.menu_right__translate{
+    padding-right: 5rem;
+    position: relative;
+    top: 0.5rem;
+}
+
+.menu_right__translate__itemImages{
+    width: 10rem;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    top: 1.3rem;
+    cursor: pointer;
+}
+
+.menu_right__translate__itemImage{
+    width: 4rem;
+    height: 4rem;
+    background-size: cover;
+}
+
+.menu_right__translate__itemImage--vi{
+    background-image: url("../../assets/img/vietnam.png");
+}
+
+.menu_right__translate__itemImage--en{
+    background-image: url("../../assets/img/united-kingdom.png");
+}

@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~ng-zorro-antd/style/index.min.css"; /* Import base styles */
+@import "~ng-zorro-antd/button/style/index.min.css";  /* Import one component's styles */
+
+
+/* declare variable */
+:root{
+    --white-color:#fff;
+    --black-color:#000;
+    --text-color:#333;
+    --border-color:#dbdbdb;
+    --primary-color: rgb(220, 30, 30);
+}
+
+*{
+    box-sizing: inherit;
+}
+
+html{
+    /* default fontsize: 16px -> 62% = 10px */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+p{
+    font-size: 1rem;
+}
+
+/*  Layout */
+nz-layout,nz-header,nz-content,nz-footer {
+    background-color: white !important;
+}
