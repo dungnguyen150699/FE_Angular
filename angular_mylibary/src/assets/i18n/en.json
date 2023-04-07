@@ -3,6 +3,7 @@
     "book" : "Book",
     "login" : "Login",
     "cart": "Cart",
+    "category": "Category",
     "translate" : "Language",
     "search" : "Search"
 }

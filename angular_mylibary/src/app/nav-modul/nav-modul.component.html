@@ -50,7 +50,7 @@
   <nz-layout>
     <nz-sider>
       <div class="wrapper">
-        <nz-form-label>CATEGORY</nz-form-label>
+        <nz-form-label>{{"category" | translate}}</nz-form-label>
         <ul nz-menu nzMode="inline" nzTheme="light">
           <li *ngFor="let item of navModulService.nodeRoot(categorys)">
             <app-node-child [category]="item" [categorys]="categorys"></app-node-child>

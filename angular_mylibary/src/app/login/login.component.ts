@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
         },
         error : (err:any) =>{
           console.log("error", err);
-          this.toastr.error("Fail",err.error.message,{
+          this.toastr.error("Fail",err.error?.message,{
           timeOut:5000 });
         }
       }).unsubscribe;

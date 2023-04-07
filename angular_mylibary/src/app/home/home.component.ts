@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { HomeService } from '../services/common_service/homeService';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute) { 
+  constructor(private route:ActivatedRoute,private homeService:HomeService) { 
   }
 
   getRequestParam = () =>{
@@ -16,7 +17,12 @@ export class HomeComponent implements OnInit {
   }
   
   ngOnInit(): void {
-  
+    this.homeService.searchAllProduct().subscribe({
+      next : (res: any) =>{
+        
+      }
+    }
+    )
   }
 
 }

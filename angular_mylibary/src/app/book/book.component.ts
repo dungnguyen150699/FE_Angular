@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class BookComponent implements OnInit {
   isCollapsed = false;
   now : Date = new Date();
+  
 
   constructor() { }
 

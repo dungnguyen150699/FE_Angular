@@ -8,7 +8,7 @@ import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { NavModulModuleComponent } from './nav-modul/nav-modul.component';
@@ -29,6 +29,7 @@ import { BookelementComponent } from './book/bookelement/bookelement.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient} from '@angular/common/http';
+import { TokenInterceptor } from './services/token.interceptor';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -74,7 +75,15 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
       }
   })
   ],
-  providers: [ { provide: NZ_I18N, useValue: en_US }, { provide: NZ_ICONS, useValue: icons } ],
+  providers: [ 
+    { provide: NZ_I18N, useValue: en_US }, 
+    { provide: NZ_ICONS, useValue: icons },
+    { 
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi:true
+    }
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

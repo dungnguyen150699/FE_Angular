@@ -31,6 +31,8 @@ export class API_URL{
     static LOGIN : string  = "http://localhost:8083/auth/login";
     static USER_INFOR : string = "http://localhost:8083/user/infor";
     // category
-    static CATEGORY_ALL:string = "http://localhost:8083/category/searchAll" 
-
+    static CATEGORY_ALL:string = "http://localhost:8083/category/searchAll" ;
+    static PRODUCT_ALL:string = "http://localhost:8083/product/searchAll";
 }
+
+
