@@ -48,11 +48,6 @@ export class LoginComponent implements OnInit {
           localStorage.setItem(ACCESS_TOKEN,res.item.accessToken);
           this.setLocalStorageUserInfo();
           this.route.navigate(['']);
-        },
-        error : (err:any) =>{
-          console.log("error", err);
-          this.toastr.error("Fail",err.error?.message,{
-          timeOut:5000 });
         }
       }).unsubscribe;
   }

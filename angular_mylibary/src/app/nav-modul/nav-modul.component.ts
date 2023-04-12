@@ -36,11 +36,6 @@ export class NavModulModuleComponent implements OnInit {
           next : (res: any) =>{
             this.categorys.push(...res.items);
             console.log("res",res,this.categorys);
-          },
-          error : (err:any) =>{
-            console.log("error", err);
-            this.toastr.error("Fail",err.error.message,{
-            timeOut:5000 });
           }
         }).unsubscribe;
     }else{

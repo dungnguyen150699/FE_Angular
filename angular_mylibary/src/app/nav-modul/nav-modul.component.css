@@ -19,6 +19,20 @@ nz-sider{
 nz-content{
     padding: 1rem;
     background-color: #efefef !important;
+    min-height: 50%;
+}
+
+nz-footer{
+    position: fixed;
+    bottom: 15%;
+    width: 100%;
+}
+
+nz-pagination{
+    position: relative;
+    right: 0px;
+    left: 68%;
+    max-width: 35%;
 }
 
 .menu{

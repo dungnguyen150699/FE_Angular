@@ -1,9 +1,7 @@
-<div nz-row class="row" *ngFor="">
-    <div nz-col nzSpan="4"><app-bookelement></app-bookelement></div>
-    <div nz-col nzSpan="4"><app-bookelement></app-bookelement></div>
-    <div nz-col nzSpan="4"><app-bookelement></app-bookelement></div>
-    <div nz-col nzSpan="4"><app-bookelement></app-bookelement></div>
-    <div nz-col nzSpan="4"><app-bookelement></app-bookelement></div>
+<!-- <div nz-row class="row" *ngFor="let item of items; index as i;"> -->
+<div nz-row class="row" >
+    <div nz-col nzSpan="4" *ngFor="let item of items;let i=index;"><app-bookelement [book]="item[i]"></app-bookelement></div>
 </div>
 
+<nz-pagination [nzPageIndex]="2" [nzTotal]="500" nzShowQuickJumper></nz-pagination>
 

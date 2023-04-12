@@ -3,9 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { API_URL, HEADER_COMON, HEADER_COMON_ACCESSTOKEN } from 'src/utils/constant';
 
 @Injectable({
-    providedIn:'root', // this way dont need setup provider in modul need inject
+    providedIn:'root',
 })
-export class LoginService {
+export class SignUpService {
 
     constructor(private http: HttpClient) { }
 

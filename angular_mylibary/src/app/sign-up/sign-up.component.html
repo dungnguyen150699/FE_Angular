@@ -1,57 +1,80 @@
-<nz-layout>
-  <nz-header class>SIGN UP</nz-header>
-  <nz-layout>
-    <nz-content>
-      <div class="signUp_ct">
-        <form class="signUp_ct__form">
-          <div>
-            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-            <div class="signUp_ct__form__yourName">
-              <input type="text" id="signUp_ct__form__inputyourname" class="form-control" />
-              <label class="form-label" for="signUp_ct__form__inputyourname">Your Name</label>
-            </div>
-          </div>
-
-          <div>
-            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-            <div class="signUp_ct__form__yourMail">
-              <input type="email" id="signUp_ct__form__inputyourEmail" class="form-control" />
-              <label class="form-label" for="signUp_ct__form__inputyourEmail">Your Email</label>
-            </div>
-          </div>
-
-          <div>
-            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-            <div class="form-outline flex-fill mb-0">
-              <input type="password" id="form3Example4c" class="form-control" />
-              <label class="form-label" for="form3Example4c">Password</label>
-            </div>
-          </div>
-
-          <div class="d-flex flex-row align-items-center mb-4">
-            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-            <div class="form-outline flex-fill mb-0">
-              <input type="password" id="form3Example4cd" class="form-control" />
-              <label class="form-label" for="form3Example4cd">Repeat your password</label>
-            </div>
-          </div>
-
-          <div class="form-check d-flex justify-content-center mb-5">
-            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
-            <label class="form-check-label" for="form2Example3">
-              I agree all statements in <a href="#!">Terms of service</a>
-            </label>
-          </div>
-
-          <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-            <button type="button" class="btn btn-primary btn-lg">Register</button>
-          </div>
-
-        </form>
-
-      </div>
-    </nz-content>
-  </nz-layout>
-  <nz-footer>footer</nz-footer>
-</nz-layout>
+ <nz-layout class="signUpForm">
+  <nz-header class="signUpForm-header">SIGN UP</nz-header>
+  <nz-content class="signUpForm-content">
+    <div nz-row>
+      <div nz-col nz-span="18">
+        <form nz-form class="signUpForm-content__form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()"  >
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="email" class="signUpForm-content__form-label signUpForm-content__form-label--email">E-mail</nz-form-label>
+            <nz-form-control [nzSpan]="18">
+              <input nz-input 
+              name="email" 
+              type="email" 
+              id="email" 
+              class="signUpForm-content__form-input"
+              formControlName="email"
+              required="Please Type Email"
+              >
+            </nz-form-control>
+          </nz-form-item >
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="username" class="signUpForm-content__form-label">User Name</nz-form-label>
+            <nz-form-control [nzSpan]="18">
+              <input nz-input 
+              name="username" 
+              type="text" 
+              id="username" 
+              class="signUpForm-content__form-input"
+              formControlName="username"
+              >
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="password" class="signUpForm-content__form-label signUpForm-content__form-label--password">Password</nz-form-label>
+            <nz-form-control [nzSpan]="18">
+              <input nz-input 
+              name="password" 
+              type="password" 
+              id="password" 
+              class="signUpForm-content__form-input"
+              formControlName="password"
+              required="Please Type Password"
+              >
+            </nz-form-control>
+          </nz-form-item >
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="retypePassword" class="signUpForm-content__form-label signUpForm-content__form-label--password">Retype Password</nz-form-label>
+            <nz-form-control [nzSpan]="18">
+              <input nz-input 
+              name="retypePassword" 
+              type="password" 
+              id="retypePassword" 
+              class="signUpForm-content__form-input"
+              formControlName="retypePassword"
+              required="Please Type Password"
+              >
+            </nz-form-control>
+          </nz-form-item >
       
+          <button nz-button nzType="primary" class="signUpForm-content__submit">Submit</button>
+          <br/>
+          <div class="signUp_Status" *ngIf="signUpStatus==false;else signUpSuccesTempl"></div>
+        </form>
+      </div>
+    </div>
+  </nz-content>
+</nz-layout>
+
+<ng-template #signUpSuccesTempl>
+  <span class="signUp_textCommon" >Congratulation You SignUp Success!</span>
+  &nbsp;
+  <a [routerLink]="'/login'" class="signUp_href">Login</a>
+</ng-template>
+
+<ng-template #suffixTemplate>
+  <span
+    nz-icon
+    [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+    (click)="passwordVisible = !passwordVisible"
+  ></span>
+</ng-template>

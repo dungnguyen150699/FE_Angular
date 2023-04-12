@@ -8,5 +8,4 @@ export class BookDTO{
 	price: number|undefined;
 	count: number|undefined;
 	category: CategoryDTO|undefined;
-
 }

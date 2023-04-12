@@ -4,11 +4,13 @@ import {
   HttpHandler,
   HttpEvent,
   HttpInterceptor,
-  HttpResponse
+  HttpResponse,
+  HttpErrorResponse
 } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { error } from 'console';
 
 
 @Injectable()
@@ -25,15 +27,20 @@ export class TokenInterceptor implements HttpInterceptor {
         'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
       }
     })
-    return next.handle(request)
+    return next.handle(req)
     .pipe(
-      tap((event: HttpEvent<any>) =>{
-        if(event instanceof HttpResponse && event.status >= 300){
-          this.toastr.error("Fail",event.body?.error?.message,{ timeOut:5000 });
-          if(event.status == 401){
-            this.route.navigate(['login']);
+      tap({
+        // next :(res:HttpEvent<any>) => {
+        //   console.log("NEXT Interceptor catch",res, typeof res);
+        // },
+        error: (err: any) =>{
+          if(err instanceof HttpErrorResponse && err.status >= 300){
+            console.log("ERROR Interceptor catch", err , typeof err);
+            this.toastr.error(err.error?.message,'Fail', {timeOut: 5000});
+            if(err.status === 401) this.route.navigate(["login"]);
           }
         }
-      }))
+      })
+    );
   }
 }
