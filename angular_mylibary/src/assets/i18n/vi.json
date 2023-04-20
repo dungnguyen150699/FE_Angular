@@ -5,5 +5,11 @@
     "cart": "Giỏ Hàng",
     "category": "Danh mục sách",
     "translate" : "Ngôn ngữ",
-    "search" : "Tìm Kiếm"
+    "search" : "Tìm Kiếm",
+    "signUp.form.email.required": "Email bắt buộc nhập!",
+    "signUp.form.email.invalid": "Email không hợp lệ!",
+    "signUp.form.username.required": "User bắt buộc nhập!",
+    "signUp.form.password.required": "Password bắt buộc nhập!",
+    "signUp.form.retypePassword.required": "RetypePassword bắt buộc nhập!",
+    "signUp.form.retypePassword.notEqual": "RetypePassword không giống Password!"
 }

@@ -29,7 +29,7 @@ import { BookelementComponent } from './book/bookelement/bookelement.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient} from '@angular/common/http';
-import { TokenInterceptor } from './services/token.interceptor';
+import { TokenInterceptor } from './interceptor/token.interceptor';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');

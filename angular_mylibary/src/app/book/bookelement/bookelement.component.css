@@ -5,6 +5,7 @@ app-bookelement {
 .book{
     background-color: white;
     margin-left: 1rem;
+    margin-bottom: 1rem;
     width: 20rem;
     cursor: pointer;
 }

@@ -1,6 +1,32 @@
+nz-form-item{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.formInputItem{
+    /* position: relative;
+    left: -45px; */
+}
+
+.signUpForm-content__form-label--required::before{
+    content: "*";
+    position: relative;
+    color: red;
+}
+
+.formInput_error{
+    color: rgb(222, 34, 34);
+    display: block;
+    margin: auto;
+    position: relative;
+    left: 25%;
+    top: -17px;
+}
+
+
 .signUpForm{
     position: relative;
-    top: 20%;
+    top: 10%;
 }
 
 .signUpForm-header{
@@ -18,10 +44,14 @@
 .signUpForm-content__form{
     margin: auto;
     width: 263%;
+    position: relative;
+    left: -38px;
+    top: -17px;
 }
 
 .signUpForm-content__form-input{
-    width: 65%;
+    min-width: 65% !important;
+    max-width: 65% !important;
     height: 3rem;
 }
 
@@ -35,78 +65,7 @@
     justify-content: center;
 }
 
-
-/* Social  */
-
-.loginForm__split-social{
-    height: 0px;
-    padding: 25px ;
-}
-
-.loginForm__split-social__border{
-    margin: auto;
-    height: 0px;
-    padding: 1rem;
-    display: block;
+.signUp_textCommon{
     position: relative;
-    border-top: black solid 1px;
-}
-
-.loginForm__split-social__text{
-    border: black solid 1px;
-    border-radius: 15px;
-    padding: 0.5rem;
-    font-weight: 500;
-    background-color: white !important;
-    position: relative;
-    top: -32px;
-    right: -47%;
-}
-
-
-.fb {
-    background-color: #3B5998;
-    color: white;
-}
-
-.github {
-    background-color: #564c4c;
-    color: white;
-}
-
-.google {
-    background-color: #dd4b39;
-    color: white;
-}
-
-/* Two-column layout */
-.col {
-    float: left;
-    /*width: 50%;*/
-    margin: auto;
-    padding: 0 50px;
-    margin-top: 20px;
-}
-
-.btn {
-    width: 158%;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    margin: 5px 0;
-    opacity: 0.85;
-    display: inline-block;
-    font-size: 17px;
-    line-height: 20px;
-    text-decoration: none;
-} 
-
-.formLogin__social{
-    display: flex;
-    position: relative;
-    /* right: -11%; */
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: auto;
+    left: 252px;
 }

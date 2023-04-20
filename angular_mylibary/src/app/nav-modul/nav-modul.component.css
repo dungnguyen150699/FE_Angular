@@ -10,10 +10,11 @@ nz-header{
 nz-sider{
     background-color: transparent !important;
     overflow-x: auto;
-    flex: none !important; 
+    flex: none !important;
     max-width: auto !important;
-    min-width: auto !important; 
+    min-width: 10% !important;
     width: auto !important;
+    padding-left: 25px;
 }
 
 nz-content{

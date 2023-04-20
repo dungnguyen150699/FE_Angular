@@ -4,61 +4,112 @@
     <div nz-row>
       <div nz-col nz-span="18">
         <form nz-form class="signUpForm-content__form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()"  >
-          <nz-form-item>
-            <nz-form-label [nzSpan]="6" nzFor="email" class="signUpForm-content__form-label signUpForm-content__form-label--email">E-mail</nz-form-label>
-            <nz-form-control [nzSpan]="18">
-              <input nz-input 
-              name="email" 
-              type="email" 
-              id="email" 
-              class="signUpForm-content__form-input"
-              formControlName="email"
-              required="Please Type Email"
-              >
-            </nz-form-control>
-          </nz-form-item >
-          <nz-form-item>
-            <nz-form-label [nzSpan]="6" nzFor="username" class="signUpForm-content__form-label">User Name</nz-form-label>
-            <nz-form-control [nzSpan]="18">
-              <input nz-input 
-              name="username" 
-              type="text" 
-              id="username" 
-              class="signUpForm-content__form-input"
-              formControlName="username"
-              >
-            </nz-form-control>
-          </nz-form-item>
-          <nz-form-item>
-            <nz-form-label [nzSpan]="6" nzFor="password" class="signUpForm-content__form-label signUpForm-content__form-label--password">Password</nz-form-label>
-            <nz-form-control [nzSpan]="18">
-              <input nz-input 
-              name="password" 
-              type="password" 
-              id="password" 
-              class="signUpForm-content__form-input"
-              formControlName="password"
-              required="Please Type Password"
-              >
-            </nz-form-control>
-          </nz-form-item >
-          <nz-form-item>
-            <nz-form-label [nzSpan]="6" nzFor="retypePassword" class="signUpForm-content__form-label signUpForm-content__form-label--password">Retype Password</nz-form-label>
-            <nz-form-control [nzSpan]="18">
-              <input nz-input 
-              name="retypePassword" 
-              type="password" 
-              id="retypePassword" 
-              class="signUpForm-content__form-input"
-              formControlName="retypePassword"
-              required="Please Type Password"
-              >
-            </nz-form-control>
-          </nz-form-item >
-      
-          <button nz-button nzType="primary" class="signUpForm-content__submit">Submit</button>
+          <div class="formInputItem">
+            <div class="formInputItem_Input">
+              <nz-form-item>
+                <nz-form-label [nzSpan]="6" nzFor="email" class="signUpForm-content__form-label signUpForm-content__form-label--required">Email</nz-form-label>
+                <nz-form-control [nzSpan]="18">
+                  <input nz-input 
+                  name="email" 
+                  type="text" 
+                  id="email" 
+                  class="signUpForm-content__form-input"
+                  formControlName="email"
+                  required="Please Type Password"
+                  >
+                </nz-form-control>
+              </nz-form-item >
+            </div>
+            <span class="formInput_error" *ngIf="(signUpForm.get('email')?.errors && 
+            (signUpForm.get('email')?.dirty || signUpForm.get('email')?.touched)  )">
+              <span *ngIf="checkKeyNameFirstKeyObject(signUpForm.get('email')?.errors,'required')">
+                {{'signUp.form.email.required' | translate}}
+              </span>
+              <span *ngIf="checkKeyNameFirstKeyObject(signUpForm.get('email')?.errors,'pattern')">
+                {{'signUp.form.email.invalid' | translate}}
+              </span>
+            </span>
+          </div>
+          <div class="formInputItem">
+            <div class="formInputItem_Input">
+              <nz-form-item>
+                <nz-form-label [nzSpan]="6" nzFor="username" class="signUpForm-content__form-label signUpForm-content__form-label--required">UserName</nz-form-label>
+                <nz-form-control [nzSpan]="18">
+                  <input nz-input 
+                  name="username" 
+                  type="text" 
+                  id="username" 
+                  class="signUpForm-content__form-input"
+                  formControlName="username"
+                  required="Please Type Password"
+                  >
+                </nz-form-control>
+              </nz-form-item >
+            </div>
+            <span class="formInput_error" *ngIf="(signUpForm.get('username')?.errors && 
+            (signUpForm.get('username')?.dirty || signUpForm.get('username')?.touched)  )">
+              <span *ngIf="checkKeyNameFirstKeyObject(signUpForm.get('username')?.errors,'required')">
+                {{'signUp.form.username.required' | translate}}
+              </span>
+            </span>
+          </div>
+          <div class="formInputItem">
+            <div class="formInputItem_Input">
+              <nz-form-item>
+                <nz-form-label [nzSpan]="6" nzFor="password" class="signUpForm-content__form-label signUpForm-content__form-label--required">Password</nz-form-label>
+                <nz-form-control [nzSpan]="18">
+                  <input nz-input 
+                  name="password" 
+                  type="password" 
+                  id="password" 
+                  class="signUpForm-content__form-input"
+                  formControlName="password"
+                  required="Please Type Password"
+                  >
+                </nz-form-control>
+              </nz-form-item >
+            </div>
+            <span class="formInput_error" *ngIf="(signUpForm.get('password')?.errors && 
+            (signUpForm.get('password')?.dirty || signUpForm.get('password')?.touched)  )">
+              <span *ngIf="checkKeyNameFirstKeyObject(signUpForm.get('password')?.errors,'required')">
+                {{'signUp.form.password.required' | translate}}
+              </span>
+            </span>
+          </div>
+          <div class="formInputItem">
+            <div class="formInputItem_Input">
+              <nz-form-item>
+                <nz-form-label [nzSpan]="6" nzFor="retypePassword" class="signUpForm-content__form-label signUpForm-content__form-label--required">Retype Password</nz-form-label>
+                <nz-form-control [nzSpan]="18">
+                  <input nz-input 
+                  name="retypePassword" 
+                  type="password" 
+                  id="retypePassword" 
+                  class="signUpForm-content__form-input"
+                  formControlName="retypePassword"
+                  required="Please Type Password"
+                  >
+                </nz-form-control>
+              </nz-form-item >
+            </div>
+            <span class="formInput_error" *ngIf="(
+              (signUpForm.get('retypePassword')?.errors && (signUpForm.get('retypePassword')?.dirty 
+                || signUpForm.get('retypePassword')?.touched))
+              || retypePasswordStatus===false )">
+              <span *ngIf="checkKeyNameFirstKeyObject(signUpForm.get('retypePassword')?.errors,'required')">
+                {{'signUp.form.retypePassword.required' | translate}}
+              </span>
+              <span *ngIf="checkKeyNameFirstKeyObject(signUpForm.get('retypePassword')?.errors,'reTypePasswordNotEqual')">
+                {{'signUp.form.retypePassword.required' | translate}}
+              </span>
+              <span *ngIf="retypePasswordStatus===false">
+                {{'signUp.form.retypePassword.notEqual' | translate}}
+              </span>
+            </span>
+          </div>
+          <button nz-button nzType="primary" class="signUpForm-content__submit" type="submit">Submit</button>
           <br/>
-          <div class="signUp_Status" *ngIf="signUpStatus==false;else signUpSuccesTempl"></div>
+          <div class="signUp_Status" *ngIf="signUpStatus===false;else signUpSuccesTempl"></div>
         </form>
       </div>
     </div>
@@ -66,15 +117,5 @@
 </nz-layout>
 
 <ng-template #signUpSuccesTempl>
-  <span class="signUp_textCommon" >Congratulation You SignUp Success!</span>
-  &nbsp;
-  <a [routerLink]="'/login'" class="signUp_href">Login</a>
-</ng-template>
-
-<ng-template #suffixTemplate>
-  <span
-    nz-icon
-    [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
-    (click)="passwordVisible = !passwordVisible"
-  ></span>
+  <span class="signUp_textCommon" >Congratulation You SignUp Success! &nbsp; <a [routerLink]="'/login'" class="signUp_href">Login</a></span>
 </ng-template>

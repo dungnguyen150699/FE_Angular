@@ -25,11 +25,10 @@ export const HEADER_COMON_ACCESSTOKEN = {
     headers: new HttpHeaders(headerIncludeAccessToken), 
 };  
 
-
 export class API_URL{
     // auth
     static LOGIN : string  = "http://localhost:8083/auth/login";
-    static SIGNUP : string = "http://localhost:8083/auth/login"
+    static SIGNUP : string = "http://localhost:8083/auth/signup"
     static USER_INFOR : string = "http://localhost:8083/user/infor";
     // category
     static CATEGORY_ALL:string = "http://localhost:8083/category/searchAll" ;

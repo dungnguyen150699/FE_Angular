@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HomeService } from '../services/common_service/homeService';
+import { HomeService } from './homeService';
 import { BookDTO } from '../model/BookDTO';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +10,7 @@ import { BookDTO } from '../model/BookDTO';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  // const items<BookDTO>[] :;
-  items: any;
+  items: BookDTO[] = new Array();
 
   constructor(private route:ActivatedRoute,private homeService:HomeService) { 
   }
@@ -20,12 +20,14 @@ export class HomeComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.homeService.searchAllProduct().subscribe({
+    const subscribe:Subscription = this.homeService.searchAllProduct().subscribe({
       next : (res: any) =>{
-        
+        this.items.push(...res.items);
+        console.log("Product: ",res)
       }
-    }
-    )
+    });
+    if(this.items.length>0) subscribe.unsubscribe();
+    
   }
 
 }

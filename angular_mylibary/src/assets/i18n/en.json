@@ -5,5 +5,8 @@
     "cart": "Cart",
     "category": "Category",
     "translate" : "Language",
-    "search" : "Search"
+    "search" : "Search",
+    "signUp.form.email.required": "Email is required!",
+    "signUp.form.email.invalid": "Email invalid!",
+    "signUp.form.retypePassword.notEqual": "RetypePassword not equal Password!"
 }

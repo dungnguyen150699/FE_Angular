@@ -1,3 +1,7 @@
+.loginForm{
+    position: relative;
+    top:10%;
+}
 .loginForm-header{
     margin: auto;
     font-weight: 500;
