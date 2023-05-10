@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { AUTH } from 'src/utils/types';
+import { AUTH, LoginResponse } from 'src/utils/types';
 import { LoginService } from './login.service';
 import { ToastrService } from 'ngx-toastr';  
 import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { ACCESS_TOKEN } from 'src/utils/constant';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -41,20 +42,34 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.get('password')?.value 
     }
 
-    this.loginService.auth(this.user).subscribe(
+    const subcription:Subscription = this.loginService.auth(this.user).subscribe(
       {
         next : (res: any) =>{
           this.loginForm.reset;
           localStorage.setItem(ACCESS_TOKEN,res.item.accessToken);
           this.setLocalStorageUserInfo();
-          this.route.navigate(['']);
+          const stringify:string|null = localStorage.getItem("user");
+          let response:LoginResponse|null = null;
+          if(stringify!=null){
+            response = JSON.parse(stringify);
+          }
+
+          if(response?.authorities?.find(item => "ADMIN"==item.authority)){
+            this.route.navigate(['admin']);
+          }else{
+            this.route.navigate(['']);
+          }
+        },
+        complete : ()=>{
+          subcription.unsubscribe();
         }
-      }).unsubscribe;
+      });
   }
 
   setLocalStorageUserInfo = () =>{
     this.loginService.infor().subscribe({
       next : (res:any) =>{
+        localStorage.removeItem("user");
         localStorage.setItem("user",JSON.stringify(res.item));
       }
     }).unsubscribe;

@@ -1,0 +1,53 @@
+<nz-layout>
+    <nz-header>
+      <ul nz-menu nzMode="horizontal" class="menu">
+        <div class="menu_logo">
+          <a [routerLink]="">
+            <img src="../../assets/img/logoptit.png" alt="my library" class="menu_logo__img">
+          </a>
+        </div>
+        <div class="menu_left" >
+          <li class="menu_left__item" nz-menu-item nzSelected>
+            <span nz-icon nzType="home"></span>
+            <a [routerLink]="'/admin/user'">
+              <span class="menu_left__item__text">{{'management.nav.user' | translate}}</span>
+            </a>
+          </li>
+          <li class="menu_left__item" nz-menu-item>
+            <span nz-icon nzType="book"></span>
+            <a [routerLink]="'/admin/book'">
+              <span class="menu_left__item__text">{{'management.nav.book' | translate}}</span>
+            </a>
+          </li>
+          <li class="menu_left__item" nz-menu-item>
+            <span nz-icon nzType="order"></span>
+            <a [routerLink]="'/admin/order'">
+              <span class="menu_left__item__text">{{'management.nav.order' | translate}}</span>
+            </a>
+          </li>
+        </div>
+        <div class="menu_right">
+            <div class="menu_right__translate">
+                <span class="menu_right__translate__text"><b>{{'translate' | translate}}</b></span>
+                <div class="menu_right__translate__itemImages">
+                <div (click)="selectLanguage('vi')" class="menu_right__translate__itemImage menu_right__translate__itemImage--vi"></div>
+                <div (click)="selectLanguage('en')" class="menu_right__translate__itemImage menu_right__translate__itemImage--en"></div>
+                </div>
+            </div>
+    
+            <a [routerLink]="'/login'" class="menu_right__login">
+                <span nz-icon nzType="user" nzTheme="outline"></span>
+                <span class="menu_right__login__text">{{'login' | translate}}</span>
+            </a>
+        </div>
+      </ul>
+    </nz-header>
+    <nz-layout>
+      <nz-content>
+          <router-outlet></router-outlet>
+      </nz-content>
+    </nz-layout>
+    <nz-footer>
+    </nz-footer>
+  </nz-layout>
+  

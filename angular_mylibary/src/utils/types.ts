@@ -24,6 +24,18 @@ export type User = {
     lastname: string;
 }
 
+export type LoginResponse = {
+    accessToken:string;
+    tokenType:string;
+    email:string;
+    username:string;
+    authorities:[
+        {
+            authority:string
+        }
+    ];
+}
+
 export type Book = {
     id : number|undefined;
 	name : string ;

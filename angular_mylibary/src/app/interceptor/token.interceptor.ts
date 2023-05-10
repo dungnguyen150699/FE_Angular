@@ -34,9 +34,9 @@ export class TokenInterceptor implements HttpInterceptor {
         //   console.log("NEXT Interceptor catch",res, typeof res);
         // },
         error: (err: any) =>{
+          console.log("ERROR Interceptor catch", err , typeof err);
           if(!err) this.toastr.error(err.error?.message,'SomeThing went wrong', {timeOut: 5000});
           if(err instanceof HttpErrorResponse && err.status >= 300){
-            console.log("ERROR Interceptor catch", err , typeof err);
             this.toastr.error(err.error?.message,'Fail', {timeOut: 5000});
             if(err.status === 401) this.route.navigate(["login"]);
           }

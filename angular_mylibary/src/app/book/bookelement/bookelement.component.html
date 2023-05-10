@@ -6,7 +6,7 @@
         <nz-space class="nzSpace">
             <img 
             nz-image  
-            [nzSrc]="'https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg'" 
+            [nzSrc]="'data:image/jpeg;base64,' + arrayBufferToBase64(book.img)" 
             [nzPlaceholder]="'placeholder'" 
             class="book_header__img"
             />

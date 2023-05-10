@@ -4,9 +4,9 @@ app-bookelement {
 
 .book{
     background-color: white;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-    width: 20rem;
+    margin-left: 5rem;
+    margin-bottom: 4rem;
+    width: 25rem;
     cursor: pointer;
 }
 
@@ -18,7 +18,7 @@ app-bookelement {
 }
 
 .book_header{
-    width: 20rem;
+    width: 100%;
     border-radius: 0.5rem;  
 }
 
@@ -31,7 +31,7 @@ app-bookelement {
 .book_info{
     position: relative;
     top:0px;
-    padding-left: 1rem;
+    padding: 0 3.5rem;
 }
 
 .book_info h3{
@@ -62,7 +62,7 @@ app-bookelement {
     top: 37px;
     height: 1rem;
     z-index: 2;
-    left: 35px;
+    left: 33px;
 }
 
 .book_info__rating__totalSold__text{
@@ -70,7 +70,7 @@ app-bookelement {
 }
 
 .book_price{
-    padding-left: 1rem;
+    padding: 0 3.5rem;
     display: flex;
     justify-content: flex-start;
 }

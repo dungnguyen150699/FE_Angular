@@ -4,6 +4,7 @@ import { EMAIL } from 'src/utils/RegexConstant';
 import { SIGNUP } from 'src/utils/types';
 import { SignUpService } from './sign-up.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-sign-up',
@@ -51,12 +52,16 @@ export class SignUpComponent implements OnInit {
         email: this.signUpForm.get('email')?.value,
         name: this.signUpForm.get('username')?.value,
         password: this.signUpForm.get('password')?.value
-      }
-      this.signUpService.signUp(this.user).subscribe({
+      };
+      
+      const subscription:Subscription = this.signUpService.signUp(this.user).subscribe({
         next : (res:any) =>{
           this.signUpStatus = true;
+        },
+        complete : () =>{
+          subscription.unsubscribe();
         }
-      }).unsubscribe();
+      });
     }
   }
 

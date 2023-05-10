@@ -30,6 +30,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient} from '@angular/common/http';
 import { TokenInterceptor } from './interceptor/token.interceptor';
+import { ManagementUserComponent } from './admin-modul/management-user/management-user.component';
+import { ManagementProductComponent } from './admin-modul/management-product/management-product.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -52,6 +54,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NodeChildComponent,
     BookelementComponent,
     SignUpComponent,
+    ManagementUserComponent,
+    ManagementProductComponent
   ],
   imports: [
     BrowserModule,

@@ -22,9 +22,14 @@ const routes: Routes = [
     loadChildren: () => 
       import('./nav-modul/nav-modul-routing.module')
         .then( (m) => m.NavModulRoutingModule)
+  },
+  {
+    path: "admin",
+    loadChildren: () =>  
+      import('./admin-modul/admin-modul-routing.module')
+        .then( (m) => m.AdminModulRoutingModule)
   }
 ]
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

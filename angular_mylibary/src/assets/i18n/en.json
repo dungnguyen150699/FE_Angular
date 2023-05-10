@@ -8,5 +8,8 @@
     "search" : "Search",
     "signUp.form.email.required": "Email is required!",
     "signUp.form.email.invalid": "Email invalid!",
-    "signUp.form.retypePassword.notEqual": "RetypePassword not equal Password!"
+    "signUp.form.retypePassword.notEqual": "RetypePassword not equal Password!",
+    "manager.nav.user": "Manage users",
+    "manager.nav.book": "Manage books",
+    "manager.nav.order": "Manage orders"
 }

@@ -11,5 +11,8 @@
     "signUp.form.username.required": "User bắt buộc nhập!",
     "signUp.form.password.required": "Password bắt buộc nhập!",
     "signUp.form.retypePassword.required": "RetypePassword bắt buộc nhập!",
-    "signUp.form.retypePassword.notEqual": "RetypePassword không giống Password!"
+    "signUp.form.retypePassword.notEqual": "RetypePassword không giống Password!",
+    "management.nav.user": "Quản lý người dùng",
+    "management.nav.book": "Quản lý sách",
+    "management.nav.order": "Quản lý đơn hàng"
 }
